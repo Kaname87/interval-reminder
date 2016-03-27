@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="jquery-2.2.2.min.js"></script>
-    <style>
-      .option {padding: 5px;}
-      #flash-message {color: blue;}
-    </style>
-  </head>
-  <body>
-
-  <h1>Reminder Setting</h1>
-      <div class="options">
-        <div class="option form" id="option-0">
-    	  <fieldset id="fs-0">
-    	  <legend>No.1</legend>
-	        <label for=enabled >ON</label>
-	        <input type="checkbox" class="enabled">
-	        <br>
-	        <label for=minute >Minute</label>
-	        <input type="range" name="minute" max="59" class="minute" value="0">
-	        <output name="output" for="minute">0</output> <br>
-	        <label for=minute >Notification Message</label>
-	        <input type="text" name="message"class="message" placeholder="message">
-	    </fieldset>
-	</div>
-
-  </div>
-    <button id="add">Add</button>
-    <button id="remove">Remove</button>
-    <div id="flash-message" style="display: none">Saved</div>
-
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-2.2.2.min.js"></script>
+        <style>
+          .option {padding: 5px;}
+          #flash-message {color: blue;}
+        </style>
+    </head>
+    <body>
+        <h1>Reminder Setting</h1>
+        <div class="options">
+            <div class="option form" id="option-0">
+                <fieldset id="fs-0">
+                    <legend>No.1</legend>
+                    <label for=enabled >ON</label>
+                    <input type="checkbox" class="enabled">
+                    <br>
+                    <label for=minute >Minute</label>
+                    <input type="range" name="minute" max="59" class="minute" value="0">
+                    <output name="output" for="minute">0</output> <br>
+                    <label for=minute >Notification Message</label>
+                    <input type="text" name="message"class="message" placeholder="message">
+                </fieldset>
+            </div>
+        </div>
+        <button id="add">Add</button>
+        <button id="remove">Remove</button>
+        <div id="flash-message" style="display: none">Saved</div>
+    <script src="options.js"></script>
+    </body>
 </html>
-<script src="options.js"></script>
+
 
