@@ -11,26 +11,28 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 // Notification
 setInterval(function(){
-	if (!on) return false;
+    if (!on) return false;
     var cnt = localStorage.getItem("option-cnt");
 
-	for (var i =0; i < cnt; i++) {
-		var option = JSON.parse(localStorage.getItem("option-" + i));
-		// only Enable oprtion is used
-		if (!option.enabled) continue;
-		// for 5 seconds
-		if (s < 5 && m == option.minute) {
-			chrome.notifications.create(
-	          'name-for-notification',{
-	          type: 'basic',
-	          iconUrl: 'on.png',
-	          title: 'notice',
-	          message: option.message
-	        }
-	  	   );
-		}
+    var d = new Date();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
 
-	}
+    for (var i =0; i < cnt; i++) {
+        var option = JSON.parse(localStorage.getItem("option-" + i));
+        // only Enable oprtion is used
+        if (!option.enabled) continue;
+        // for 3 seconds
+        if (s < 3 && m == option.minute) {
+            chrome.notifications.create(
+                'name-for-notification',{
+                type: 'basic',
+                iconUrl: 'on.png',
+                title: 'notice',
+                message: option.message
+            });
+        }
+    }
 } , 500);
 
 
